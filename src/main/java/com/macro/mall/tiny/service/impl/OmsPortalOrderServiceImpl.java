@@ -34,8 +34,8 @@ public class OmsPortalOrderServiceImpl implements OmsPortalOrderService {
     private void sendDelayMessageCancelOrder(Long orderId){
         // 获取订单超时时间,假设为60分钟
         // 先改为30秒
-        long delayTimes = 30;
-        // long delayTimes = 30 * 1000;
+        // long delayTimes = 30;
+        long delayTimes = 30 * 1000;
         // 发送延迟消息
         cancelOrderSender.sendMessage(orderId, delayTimes);
     }

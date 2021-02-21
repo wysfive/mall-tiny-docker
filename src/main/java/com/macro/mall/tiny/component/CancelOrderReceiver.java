@@ -1,8 +1,11 @@
 package com.macro.mall.tiny.component;
 
+import com.macro.mall.tiny.service.OmsPortalOrderService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.amqp.rabbit.annotation.RabbitHandler;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 /**
@@ -14,6 +17,14 @@ import org.springframework.stereotype.Component;
 public class CancelOrderReceiver {
     private static Logger LOGGER = LoggerFactory.getLogger(CancelOrderReceiver.class);
 
-    // private Oms
+    @Autowired
+    private OmsPortalOrderService portalOrderService;
+
+    @RabbitHandler
+    public void handle(Long orderId){
+        LOGGER.info("receiver delay message orderId:{}", orderId);
+        portalOrderService.cancelOrder(orderId);
+    }
+
 
 }

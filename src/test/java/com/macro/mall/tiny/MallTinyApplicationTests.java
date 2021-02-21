@@ -16,7 +16,7 @@ public class MallTinyApplicationTests {
     public void contextLoads() {
 
         //将密码进行加密操作
-        String encodePassword = passwordEncoder.encode("1");
+        String encodePassword = passwordEncoder.encode("123");
         System.out.println(encodePassword);
 
     }
