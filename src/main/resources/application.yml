@@ -41,6 +41,16 @@ mybatis:
     - classpath:mapper/*.xml
     - classpath*:com/**/mapper/*.xml
 
+mybatis-plus:
+  mapper-localtion: classpath:/mapper/**/*.xml #指定mapper.xml的路径
+  global-config:
+    db-config:
+      id-type: auto #全局默认主键类型设置为自增
+  configuration:
+    auto-mapping-behavior: partial #对非嵌套的resultMap进行自动映射
+    map-underscore-to-camel-case: true #开启自动驼峰命名规则映射
+
+
 # OSS相关配置信息
 aliyun:
   oss:
