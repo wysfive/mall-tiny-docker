@@ -39,7 +39,7 @@
         <javaClientGenerator type="XMLMAPPER" targetPackage="com.macro.mall.tiny.mbg.mapper"
                              targetProject="E:\code\20_12\mall-tiny\src\main\java"/>
         <!--生成全部表tableName设为%-->
-        <table tableName="pms_product_attribute_value">
+        <table tableName="ums_%">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
         </table>
 

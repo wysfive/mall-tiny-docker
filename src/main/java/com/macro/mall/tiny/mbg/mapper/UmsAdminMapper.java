@@ -4,9 +4,11 @@ import com.macro.mall.tiny.mbg.model.UmsAdmin;
 import com.macro.mall.tiny.mbg.model.UmsAdminExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UmsAdminMapper {
-    int countByExample(UmsAdminExample example);
+    long countByExample(UmsAdminExample example);
 
     int deleteByExample(UmsAdminExample example);
 
